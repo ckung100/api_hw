@@ -1,0 +1,90 @@
+@keyframes drop {
+  0% {
+    top: -150%;
+    right: 50%;
+  }
+  100% {
+    top: 150%;
+    right: 50%;
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sky {
+  height: 100%;
+  perspective: 1000px;
+  position: absolute;
+  width: 100%;
+  
+  &--is-raining {
+    background-color: #fff;
+  }
+}
+
+.rain {
+  z-index: -10;
+  animation: drop 4s infinite;
+  animation-timing-function: linear;
+  background: linear-gradient(rgba(255,255,255,0), 70%, rgba(100,100,100,1));
+  height: 90px;
+  position: absolute;
+  width: 2px;
+  
+  &--back {
+    transform: translateZ(-800px);
+  }
+}
+
+#music{
+  text-align: center;
+  z-index: 1;
+  margin-top: 25%;
+}
+
+
+#ocean{
+  position:absolute;
+  width:100%;
+  min-height:100%;
+  background-color: black;
+  top: 60%;
+  z-index: -5;
+}
+
+.wave{
+  background: white;
+  display:inline-block;
+  height:30%;
+  width:10px;
+  position:absolute;
+  -webkit-animation-name:             dostuff; 
+  -webkit-animation-duration:         20s; 
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+
+@-webkit-keyframes dostuff{
+  0%{
+    height:30%;
+  }
+  50%{ 
+    height:10%;
+  }
+  100%{ 
+    height:30%;
+  }
+}
+
+
+
+
+
+
+
+
+
